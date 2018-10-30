@@ -24,6 +24,7 @@ $(call inherit-product, device/oneplus/enchilada/device.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_GAPPS_ARCH := arm64
 CUSTOM_BUILD_TYPE := OFFICIAL
+TARGET_INCLUDE_STOCK_ARCORE := true
 
 # Inherit some common PixelExperience stuff.
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
