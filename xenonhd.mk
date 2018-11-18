@@ -21,10 +21,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from enchilada device
 $(call inherit-product, device/oneplus/enchilada/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common XenonHD stuff.
+$(call inherit-product, vendor/xenonhd/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_enchilada
+PRODUCT_NAME := xenonhd_enchilada
 PRODUCT_DEVICE := enchilada
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
@@ -43,3 +43,7 @@ PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
     ro.product.model
 
 BUILD_FINGERPRINT := OnePlus/OnePlus6/OnePlus6:8.1.0/OPM1.171019.011/06140300:user/release-keys
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.xenonhd.maintainer=dadi11 \
+    ro.xenonhd.donate="https://www.paypal.me/dadi11"
