@@ -21,24 +21,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from enchilada device
 $(call inherit-product, device/oneplus/enchilada/device.mk)
 
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_GAPPS_ARCH := arm64
-CUSTOM_BUILD_TYPE := OFFICIAL
-TARGET_INCLUDE_STOCK_ARCORE := true
-
 # Inherit some common PixelExperience stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/xenonhd/config/common_full_phone.mk)
 
-# Maintainer Prop
-PRODUCT_BUILD_PROP_OVERRIDES += \
-DEVICE_MAINTAINERS="Akash Srivastava"
-
-PRODUCT_NAME := aosp_enchilada
+PRODUCT_NAME := xenonhd_enchilada
 PRODUCT_DEVICE := enchilada
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
-PRODUCT_MODEL := ONEPLUS A6003
-PRODUCT_RELEASE_NAME := enchilada
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
@@ -50,4 +39,11 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=OnePlus6 \
     PRIVATE_BUILD_DESC="OnePlus6-user 8.1.0 OPM1.171019.011 273 release-keys"
 
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
+    ro.product.model
+
 BUILD_FINGERPRINT := OnePlus/OnePlus6/OnePlus6:8.1.0/OPM1.171019.011/06140300:user/release-keys
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.xenonhd.maintainer=dadi11 \
+    ro.xenonhd.donate="https://www.paypal.me/dadi11"
